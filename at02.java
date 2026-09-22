@@ -1,4 +1,4 @@
-package L01;
+package L02;
 
 import java.util.Scanner;
 
@@ -6,22 +6,20 @@ public class at02 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Digite o primeiro número inteiro: ");
-        int n1 = sc.nextInt();
+        System.out.print("Digite um número inteiro: ");
+        int numero = sc.nextInt();
 
-        System.out.print("Digite o segundo número inteiro: ");
-        int n2 = sc.nextInt();
-
-        int soma = n1 + n2;
-        int subtracao = n1 - n2;
-        int multiplicacao = n1 * n2;
-        int divisaoInteira = n1 / n2;
-        int resto = n1 % n2;
-
-        System.out.println("Soma: " + soma);
-        System.out.println("Subtração: " + subtracao);
-        System.out.println("Produto: " + multiplicacao);
-        System.out.println("Divisão Inteira: " + divisaoInteira);
-        System.out.println("Resto da Divisão: " + resto);
+        if (numero > 0) {
+            System.out.println("É positivo.");
+        }
+        if (numero % 2 == 0) {
+            System.out.println("É par.");
+        }
+        if (numero % 5 == 0) {
+            System.out.println("É múltiplo de 5.");
+        }
+        if (Math.abs(numero) >= 10 && Math.abs(numero) <= 99) {
+            System.out.println("Tem dois dígitos.");
+        }
     }
 }

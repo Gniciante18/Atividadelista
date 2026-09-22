@@ -1,4 +1,4 @@
-package L01;
+package L02;
 
 import java.util.Scanner;
 
@@ -6,12 +6,22 @@ public class at08 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Digite a temperatura em graaus Celsius (°C): ");
-        double celsius = sc.nextDouble();
+        System.out.print("Digite a velocidade máxima da via (km/h): ");
+        double maxima = sc.nextDouble();
 
-        double fahrenheit = (celsius * 1.8) + 32;
-        double kelvin = celsius + 273.15;
+        System.out.print("Digite a velocidade do veículo (km/h): ");
+        double veiculo = sc.nextDouble();
 
-        System.out.printf("%.1f °C correspondem a: %.1f °F e %.2f K%n", celsius, fahrenheit, kelvin);
+        if (veiculo <= maxima) {
+            System.out.println("Dentro do limite. Sem multa.");
+        } else if (veiculo <= maxima * 1.20) {
+            System.out.println("Infração Média.");
+        } else if (veiculo <= maxima * 1.50) {
+            System.out.println("Infração Grave.");
+        } else {
+            System.out.println("Infração Gravíssima.");
+        }
+
+
     }
 }

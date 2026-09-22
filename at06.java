@@ -1,4 +1,4 @@
-package L01;
+package L02;
 
 import java.util.Scanner;
 
@@ -6,13 +6,22 @@ public class at06 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Digite o raio do círculo: ");
-        double raio = sc.nextDouble();
+        System.out.print("Digite o valor total da compra: R$ ");
+        double compra = sc.nextDouble();
 
-        double area = Math.PI * Math.pow(raio, 2);
-        double perimetro = 2 * Math.PI * raio;
+        double frete;
 
-        System.out.printf("Área do círculo: %.2f%n", area);
-        System.out.printf("Perímetro do círculo: %.2f%n", perimetro);
+        if (compra >= 199.00) {
+            frete = 0.00;
+        } else {
+            frete = 24.90;
+        }
+
+        double total = compra + frete;
+
+        System.out.printf("Valor do frete: R$ %.2f%n", frete);
+        System.out.printf("Total a pagar  : R$ %.2f%n", total);
+
+
     }
 }

@@ -1,4 +1,4 @@
-package L01;
+package L02;
 
 import java.util.Scanner;
 
@@ -6,21 +6,23 @@ public class at11 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Digite o primeiro número: ");
-        int a = sc.nextInt();
+        System.out.print("Digite a frequência (%): ");
+        double frequencia = sc.nextDouble();
 
-        System.out.print("Digite o segundo número: ");
-        int b = sc.nextInt();
-
-        System.out.print("Digite o terceiro número: ");
-        int c = sc.nextInt();
-
-        if (a > b && a > c) {
-            System.out.println("O maior número é: " + a);
-        } else if (b > c) {
-            System.out.println("O maior número é: " + b);
+        if (frequencia < 75.0) {
+            System.out.println("Reprovado por falta");
         } else {
-            System.out.println("O maior número é: " + c);
+            System.out.print("Digite a média final: ");
+            double media = sc.nextDouble();
+
+            if (media >= 7.0) {
+                System.out.println("Aprovado");
+            } else if (media >= 5.0) {
+                System.out.println("Recuperação");
+            } else {
+                System.out.println("Reprovado por nota");
+            }
         }
+
     }
 }

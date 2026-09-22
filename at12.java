@@ -1,4 +1,4 @@
-package L01;
+package L02;
 
 import java.util.Scanner;
 
@@ -6,22 +6,27 @@ public class at12 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Digite o consumo mensal de energia (kWh): ");
-        double consumo = sc.nextDouble();
+        System.out.print("Digite o saldo da conta: R$ ");
+        double saldo = sc.nextDouble();
 
-        double precoPorKwh;
+        System.out.print("Digite o limite diário de saque: R$ ");
+        double limiteDiario = sc.nextDouble();
 
-        if (consumo <= 100) {
-            precoPorKwh = 0.50;
-        } else if (consumo <= 300) {
-            precoPorKwh = 0.75;
+        System.out.print("Digite o valor a ser sacado: R$ ");
+        double valorSaque = sc.nextDouble();
+
+        if (saldo < valorSaque) {
+            System.out.println("Saldo insuficiente.");
         } else {
-            precoPorKwh = 1.10;
+            if (valorSaque > limiteDiario) {
+                System.out.println("Valor ultrapassa o limite diário de saque.");
+            } else {
+                saldo -= valorSaque;
+                System.out.println("Saque efetuado com sucesso.");
+                System.out.printf("Novo saldo: R$ %.2f%n", saldo);
+            }
         }
 
-        double valorTotal = consumo * precoPorKwh;
 
-        System.out.printf("Preço aplicado por kWh: R$ %.2f%n", precoPorKwh);
-        System.out.printf("Valor total da conta: R$ %.2f%n", valorTotal);
     }
 }
